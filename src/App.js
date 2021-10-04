@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import Header from './Components/Header';
+import MainContent from './Components/MainContent';
 
+// 'http://api-doc.axesso.de/#api-Amazon-GetProductInformation'
+
+ 
 function App() {
+
+  const [showItems, setShowItems] = useState([])
+
+
+  useEffect(()=> {
+    fetch('https://fakestoreapi.com/products')
+            .then(res=>res.json())
+            .then(data=> setShowItems(data))
+},[])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header /> 
+      <MainContent showItems={showItems}/>
     </div>
   );
 }

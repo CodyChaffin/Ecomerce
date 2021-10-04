@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import './App.css';
 import Header from './Components/Header';
 import MainContent from './Components/MainContent';
 
@@ -9,6 +8,7 @@ import MainContent from './Components/MainContent';
 function App() {
 
   const [showItems, setShowItems] = useState([])
+  const [searchItems, setSearchItems] = useState('')
 
 
   useEffect(()=> {
@@ -17,10 +17,20 @@ function App() {
             .then(data=> setShowItems(data))
 },[])
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(searchItems)
+    setShowItems(showItems.filter(item => item.category.toLowerCase().includes(searchItems.toLowerCase())))
+  }
+
 
   return (
-    <div>
-      <Header /> 
+    <div className='app'>
+      <Header 
+        searchItems={searchItems} 
+        setSearchItems={setSearchItems} 
+        handleSubmit={handleSubmit}
+      /> 
       <MainContent showItems={showItems}/>
     </div>
   );

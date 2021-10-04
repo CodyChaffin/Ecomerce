@@ -7,9 +7,12 @@ const MainContent = ({showItems}) => {
     const displayProducts = showItems.map(items => <ItemCard key={items.id} items={items}/>)
 
     return (
-        <div>
-            {displayProducts}
-        </div>
+        <>
+            <div className='main-top'></div>
+            <ul className='cards'>
+                {displayProducts}
+            </ul>
+        </>
     )
 }
 

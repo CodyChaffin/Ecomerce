@@ -1,13 +1,122 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+  margin: 0 auto;
+}
+
+.search{
+  margin-top: 30px;
+  text-align: center;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  padding-top: 0px;
+  background-color: rgb(238, 82, 34);
+}
+
+.logo{
+  width: 61px;
+  height: 56px;
+  justify-content: flex-start;
+}
+
+.logo-box{
+  font-size: 1.5rem;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.searchbar {
+  flex: 1 1 auto;
+  margin: 0 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.searchbar input {
+  width: 52%;
+  font-size: 1.5rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding-left: 0.5rem;
+}
+
+.searchbar select {
+  font-size: 1em;
+  padding: 5px;
+  border-radius: 6px;
+  margin-right: 10px;
+  background: rgb(236, 181, 181);
+  border: 1px solid #ccc;
+}
+
+.searchbar button {
+  width: 6%;
+  font-size: 17px;
+  padding: 0 0.25rem;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.cart{
+  font-size: 30px;
+  margin-right: 20px ;
+  margin-top: -7px;
+}
+
+.main-top{
+  padding: 66px;
+    background-color: #e8e8e8;
+}
+
+.cards {
+  list-style: none;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.card {
+  margin: 1rem;
+}
+
+.card img {
+  width: 90%;
+  height: 250px;
+}
+
+.card button {
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .card {
+    width: calc(22% - 2rem);;
+  }
+}
+.card h3{
+  font-size: 22px;
+}
+
+.card h4{
+  margin-top: 10px;
+  color: red;
 }

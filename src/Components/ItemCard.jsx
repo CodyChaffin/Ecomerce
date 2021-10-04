@@ -2,10 +2,11 @@ import React from 'react'
 
 const ItemCard = ({items}) => {
     return (
-        <div>
+        <div className='card'>
+            <img src={items.image} alt={items.category}/>
+            <h4>${items.price}</h4>
             <h3>{items.category}</h3>
-            <p>${items.price}</p>
-            <img src={items.image} alt=""/>
+            
         </div>
     )
 }

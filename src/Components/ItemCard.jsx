@@ -1,6 +1,7 @@
 import React from 'react'
 
 const ItemCard = ({items}) => {
+   
     return (
         <div className='card'>
             <img src={items.image} alt={items.category}/>

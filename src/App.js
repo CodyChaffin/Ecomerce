@@ -10,6 +10,7 @@ function App() {
   const [showItems, setShowItems] = useState([])
   const [searchItems, setSearchItems] = useState('')
   const [sortItems, setSortItems] = useState('All')
+  const [filterCategory, setFilterCategory] = useState('')
 
 
   useEffect(()=> {
@@ -18,26 +19,30 @@ function App() {
             .then(data=> setShowItems(data))
 },[])
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setShowItems(showItems.filter(item => item.category.toLowerCase().includes(searchItems.toLowerCase())))
-  }
+//filter by search
+
+  const searchedOutput = showItems.filter(item => item.category.toLowerCase().includes(searchItems.toLowerCase()))
 
 
+// //filter by category
+
+  const selectedCategory = filterCategory ? searchedOutput.filter(itemCategory => itemCategory.category === filterCategory) : [...searchedOutput]
+    
 
 
-
+  console.log(selectedCategory)
   return (
     <div className='app'>
       <Header 
         searchItems={searchItems} 
         setSearchItems={setSearchItems} 
-        handleSubmit={handleSubmit}
         setSortItems = {setSortItems}
+        setFilterCategory={setFilterCategory}
       /> 
       <MainContent 
         showItems={showItems}
-        sortItems={sortItems}
+        sortItems={sortItems}  
+        selectedCategory={selectedCategory}         
       />
     </div>
   );

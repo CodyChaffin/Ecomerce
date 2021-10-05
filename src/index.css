@@ -53,14 +53,7 @@
   padding-left: 0.5rem;
 }
 
-.searchbar select {
-  font-size: 1em;
-  padding: 5px;
-  border-radius: 6px;
-  margin-right: 10px;
-  background: rgb(236, 181, 181);
-  border: 1px solid #ccc;
-}
+
 
 .searchbar button {
   width: 6%;
@@ -147,4 +140,32 @@
   margin-top: 10px;
   font-size: 22px;
   color: red;
+}
+
+.category-bar{
+  background-color: #ff4d4d;
+  list-style: none;
+  display: flex;
+  padding: 12px;
+  justify-content: space-evenly;
+}
+
+
+.category-bar button {
+  width: 8%;
+  margin: 1px;
+  font-size: 15px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.category-bar select {
+  font-size: 1em;
+  padding: 5px;
+  border-radius: 6px;
+  margin-right: 10px;
+  background: rgb(255, 255, 255);
+  border: 1px solid #ccc;
 }

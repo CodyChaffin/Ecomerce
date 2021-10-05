@@ -1,21 +1,28 @@
-import React from 'react'
+import React,{useState} from 'react'
 
-const Filter = ({searchItems, setSearchItems, handleSubmit, setSortItems}) => {
+const Filter = ({setSearchItems}) => {
+
+    const [searchValue, setSearchValue] = useState('')
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        setSearchItems(searchValue)
+      }
+
+    const onChangeHandler = (e) => { 
+        setSearchValue(e.target.value)
+    }
+
     return (
         <form className="searchbar" onSubmit={handleSubmit}>
-            <select onChange={(e) => setSortItems(e.target.value)}>
-                <option value='All'>All</option>
-                <option value='A-Z'>A-Z</option>
-                <option value='Low'>Price: Low-high</option>
-                <option value='High'>Price: High-low</option>
-            </select>
+      
             <input
                 type="text"
                 id="search"
                 placeholder="search products"
                 required={true}
-                value={searchItems}
-                onChange={(e) => setSearchItems(e.target.value)}
+                value={searchValue}
+                onChange={onChangeHandler}
             />
             <button type="submit">Search</button>
         </form>

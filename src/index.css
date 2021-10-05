@@ -1,4 +1,5 @@
 * {
+  font-family: Raleway, Roboto Slab;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,13 +19,14 @@
   align-items: center;
   padding-bottom: 10px;
   padding-top: 0px;
-  background-color: rgb(238, 82, 34);
+  background-color: rgb(255 77 77);
 }
 
 .logo{
   width: 61px;
   height: 56px;
   justify-content: flex-start;
+  cursor: pointer;
 }
 
 .logo-box{
@@ -74,11 +76,15 @@
   font-size: 30px;
   margin-right: 20px ;
   margin-top: -7px;
+  cursor: pointer;
 }
 
 .main-top{
-  padding: 66px;
-    background-color: #e8e8e8;
+  padding: 100px;
+  opacity: 0.89;
+  background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80');
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .cards {
@@ -89,11 +95,31 @@
 
 .card {
   margin: 1rem;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.card:hover{
+  transform: scale(1.03);
 }
 
 .card img {
+  padding: 15px;
   width: 90%;
   height: 250px;
+  left: 50%;
+  border-radius: 15px;
+  /* object-fit: contain;
+  box-shadow: inset -5px -5px 5px rgb(255 77 77);
+  padding: 19px; */
+  object-fit: contain;
+  box-shadow: inset -3px -3px 0px rgb(255 77 77);
+  padding: 19px;
+}
+
+.card img:hover{
+  box-shadow: inset -3px -3px 15px rgb(230 213 213)
 }
 
 .card button {
@@ -112,11 +138,13 @@
     width: calc(22% - 2rem);;
   }
 }
+
 .card h3{
   font-size: 22px;
 }
 
 .card h4{
   margin-top: 10px;
+  font-size: 22px;
   color: red;
 }

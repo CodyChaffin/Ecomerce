@@ -9,6 +9,7 @@ function App() {
 
   const [showItems, setShowItems] = useState([])
   const [searchItems, setSearchItems] = useState('')
+  const [sortItems, setSortItems] = useState('All')
 
 
   useEffect(()=> {
@@ -19,9 +20,11 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(searchItems)
     setShowItems(showItems.filter(item => item.category.toLowerCase().includes(searchItems.toLowerCase())))
   }
+
+
+
 
 
   return (
@@ -30,8 +33,12 @@ function App() {
         searchItems={searchItems} 
         setSearchItems={setSearchItems} 
         handleSubmit={handleSubmit}
+        setSortItems = {setSortItems}
       /> 
-      <MainContent showItems={showItems}/>
+      <MainContent 
+        showItems={showItems}
+        sortItems={sortItems}
+      />
     </div>
   );
 }

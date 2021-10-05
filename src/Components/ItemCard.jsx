@@ -4,9 +4,12 @@ const ItemCard = ({items}) => {
     return (
         <div className='card'>
             <img src={items.image} alt={items.category}/>
-            <h4>${items.price}</h4>
-            <h3>{items.category}</h3>
-            
+            <span>
+                <h4>${items.price}</h4>
+                <p>{items.rating.rate}/5</p>
+            </span>  
+            <h3>{items.category}</h3>  
+                  
         </div>
     )
 }

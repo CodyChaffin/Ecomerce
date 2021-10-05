@@ -1,13 +1,13 @@
 import React from 'react'
 
-const Filter = ({searchItems, setSearchItems, handleSubmit}) => {
+const Filter = ({searchItems, setSearchItems, handleSubmit, setSortItems}) => {
     return (
         <form className="searchbar" onSubmit={handleSubmit}>
-            <select>
-                <option>All</option>
-                <option>A-Z</option>
-                <option>Price: Low-high</option>
-                <option>Price: High-low</option>
+            <select onChange={(e) => setSortItems(e.target.value)}>
+                <option value='All'>All</option>
+                <option value='A-Z'>A-Z</option>
+                <option value='Low'>Price: Low-high</option>
+                <option value='High'>Price: High-low</option>
             </select>
             <input
                 type="text"

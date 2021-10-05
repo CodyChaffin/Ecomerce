@@ -1,7 +1,7 @@
 import React from 'react'
 import Filter from './Filter'
 
-const Header = ({searchItems, setSearchItems, handleSubmit}) => {
+const Header = ({searchItems, setSearchItems, handleSubmit, setSortItems}) => {
     return (
         <div className='header'>
             <span className='logo-box'>
@@ -16,6 +16,7 @@ const Header = ({searchItems, setSearchItems, handleSubmit}) => {
                 searchItems={searchItems} 
                 setSearchItems={setSearchItems}
                 handleSubmit={handleSubmit}
+                setSortItems={setSortItems}
             />  
             <span className='cart'>
              🛒 

@@ -198,3 +198,11 @@
 .card-carousel button {
   margin-top: 0.5rem;
 }
+
+.centered{
+  color: #ff4d4d;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}

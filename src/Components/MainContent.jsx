@@ -6,7 +6,7 @@ import CarouselCard2 from './CarouselCard2';
 
 
 
-const MainContent = ({sortItems, selectedCategory}) => {
+const MainContent = ({sortItems, selectedCategory, itemAdded}) => {
 
     function SampleNextArrow(props) {
         const { className, style, onClick } = props;
@@ -53,7 +53,7 @@ const MainContent = ({sortItems, selectedCategory}) => {
         }
     })
 
-    .map(items => <ItemCard key={items.id} items={items} />)
+    .map(items => <ItemCard key={items.id} items={items} itemAdded={itemAdded}/>)
 
     const displayCarousel1 = selectedCategory.filter(item => item.rating[0] > 4)
                             .map(newItems => <CarouselCard newItems={newItems} key={newItems.id}/>)
@@ -78,7 +78,7 @@ const MainContent = ({sortItems, selectedCategory}) => {
 
 
 
-    const displayCarousel2 = randomArr.map(dealItem => <CarouselCard2 dealItem={dealItem} key={dealItem.id}/>)
+    const displayCarousel2 = randomArr.map(dealItem => <CarouselCard2 dealItem={dealItem} key={dealItem.id} itemAdded={itemAdded}/>)
     
     return (
 

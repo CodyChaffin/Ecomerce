@@ -1,11 +1,25 @@
 import React from 'react'
 import Filter from './Filter'
 import Category from './Category'
+import Cart from './Cart'
+import { useState } from 'react'
 
 
 
-const Header = ({searchItems, setSearchItems, handleSubmit, setSortItems, setFilterCategory}) => {
-  
+
+const Header = ({searchItems, setSearchItems, handleSubmit, setSortItems, setFilterCategory, cartItems}) => {
+    const [ cartOpen, setCartOpen ] = useState(false)
+     
+    function CartWindow(){
+        
+        return (
+            <span onClick={()=>setCartOpen(!cartOpen)} className='cart'>
+                🛒 
+            </span> 
+
+            
+        )
+    }
     return (
         <>
             <div className='header'>
@@ -23,9 +37,8 @@ const Header = ({searchItems, setSearchItems, handleSubmit, setSortItems, setFil
                     handleSubmit={handleSubmit}
                     setSortItems={setSortItems}
                 />  
-                <span className='cart'>
-                🛒 
-                </span>   
+                {cartOpen ? <Cart cartItems={cartItems}setCartOpen={setCartOpen} cartOpen={cartOpen}/> : CartWindow() }  
+                 
                 
             </div>
             <div className='main-top'></div>

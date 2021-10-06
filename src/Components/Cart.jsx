@@ -9,7 +9,7 @@ function Cart({cartOpen, setCartOpen, cartItems}) {
          <span onClick={()=>setCartOpen(!cartOpen)} className='cart'>
                 🛒 
          </span> 
-         <ul>
+         <ul style={{}}>
             {cartItems.map(cartItem =><CartCard key={cartItem.id} cartItem={cartItem}/>)} 
          </ul>
         </Drawer>

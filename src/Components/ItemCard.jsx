@@ -1,17 +1,17 @@
 import React from 'react'
 
 
-const ItemCard = ({items}) => {
+const ItemCard = ({items, itemAdded}) => {
    
     return (
         <div className='card'>
-            <img src={items.image} alt={items.name}/>
+            <img onClick={()=>console.log("hey")} src={items.image} alt={items.name}/>
             <span>
                 <h4>${items.price}</h4>
                 <p>{items.rating}</p>
             </span>  
             <h3>{items.name}</h3>  
-                  
+            <button onClick={()=>{itemAdded(items)}}>Add TO Cart</button>
         </div>
     )
 }

@@ -1,15 +1,16 @@
 import React from 'react'
 
+
 const ItemCard = ({items}) => {
    
     return (
         <div className='card'>
-            <img src={items.image} alt={items.category}/>
+            <img src={items.image} alt={items.name}/>
             <span>
                 <h4>${items.price}</h4>
-                <p>{items.rating.rate}/5</p>
+                <p>{items.rating}</p>
             </span>  
-            <h3>{items.category}</h3>  
+            <h3>{items.name}</h3>  
                   
         </div>
     )

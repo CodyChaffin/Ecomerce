@@ -2,9 +2,7 @@ import { useEffect, useState } from 'react';
 import Header from './Components/Header';
 import MainContent from './Components/MainContent';
 
-// 'http://api-doc.axesso.de/#api-Amazon-GetProductInformation'
 
- 
 function App() {
 
   const [showItems, setShowItems] = useState([])
@@ -14,23 +12,20 @@ function App() {
 
 
   useEffect(()=> {
-    fetch('http://localhost:3000/Products')
+    fetch('http://localhost:8000/products')
             .then(res=>res.json())
             .then(data=> setShowItems(data))
 },[])
 
 //filter by search
-
-  const searchedOutput = showItems.filter(item => item.category.toLowerCase().includes(searchItems.toLowerCase()))
+  const searchedOutput = showItems.filter(item => item.name.toLowerCase().includes(searchItems.toLowerCase()))
 
 
 // //filter by category
-
   const selectedCategory = filterCategory ? searchedOutput.filter(itemCategory => itemCategory.category === filterCategory) : [...searchedOutput]
     
 
 
-  console.log(selectedCategory)
   return (
     <div className='app'>
       <Header 

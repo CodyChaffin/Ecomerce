@@ -103,9 +103,6 @@
   height: 250px;
   left: 50%;
   border-radius: 15px;
-  /* object-fit: contain;
-  box-shadow: inset -5px -5px 5px rgb(255 77 77);
-  padding: 19px; */
   object-fit: contain;
   box-shadow: inset -3px -3px 0px rgb(255 77 77);
   padding: 19px;
@@ -124,7 +121,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    align-items: center;
   }
 
   .card {
@@ -168,4 +164,37 @@
   margin-right: 10px;
   background: rgb(255, 255, 255);
   border: 1px solid #ccc;
+}
+
+/* Carousel 1  */
+
+
+.card-carousel {
+  margin: 1rem;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.card-carousel:hover{
+  transform: scale(1.03);
+}
+
+.card-carousel img {
+  padding: 15px;
+  width: 90%;
+  height: 250px;
+  left: 50%;
+  border-radius: 15px;
+  object-fit: contain;
+  box-shadow: inset 7px 7px 1px rgb(255 77 77);
+  padding: 19px;
+}
+
+.card-carousel img:hover{
+  box-shadow: inset -3px -3px 15px rgb(230 213 213)
+}
+
+.card-carousel button {
+  margin-top: 0.5rem;
 }

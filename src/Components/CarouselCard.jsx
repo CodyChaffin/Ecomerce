@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CarouselCard = ({topItems}) => {
+const CarouselCard = ({topItems, itemAdded}) => {
 
   
 
@@ -12,7 +12,8 @@ const CarouselCard = ({topItems}) => {
                     <h4>${topItems.price}</h4>
                     <p>{topItems.rating}</p>
                 </span>  
-                <h3>{topItems.name}</h3>                
+                <h3>{topItems.name}</h3> 
+                <button className='addBtn' onClick={()=>{itemAdded(topItems)}}>Add TO Cart</button>               
             </div>
    
     )

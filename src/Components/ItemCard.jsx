@@ -11,7 +11,7 @@ const ItemCard = ({items, itemAdded}) => {
                 <p>{items.rating}</p>
             </span>  
             <h3>{items.name}</h3>  
-            <button onClick={()=>{itemAdded(items)}}>Add TO Cart</button>
+            <button className='addbtn' onClick={()=>{itemAdded(items)}}>Add TO Cart</button>
         </div>
     )
 }

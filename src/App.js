@@ -42,8 +42,9 @@ function itemAdded(newCartItem){
         setFilterCategory={setFilterCategory}
         setHideItems={setHideItems}
         cartItems={cartItems}
+        setCartItems={setCartItems}
       /> 
-      <Route>
+      
       <MainContent 
         showItems={showItems}
         sortItems={sortItems}  
@@ -51,7 +52,6 @@ function itemAdded(newCartItem){
         hideItems={hideItems} 
         itemAdded={itemAdded}        
       />
-      </Route>
       
     </div>
   );

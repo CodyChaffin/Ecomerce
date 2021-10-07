@@ -1,5 +1,5 @@
 
-function CartCard({cartItem}){
+function CartCard({cartItem, handleDelete}){
     return(
         <div style={{textAlign:'center', margin:'30px', wordWrap:'break-word'}}
         className='cartCard'>
@@ -10,7 +10,7 @@ function CartCard({cartItem}){
             </span>  
             <h3>{cartItem.name}</h3> 
             <p style={{textAlign:'center'}}>{cartItem.description}</p> 
-            <button style={{alignContent:'left'}} onClick={()=>{console.log('gone')}} style={{backgroundColor:"red"}}>Remove From Cart</button>
+            <button style={{alignContent:'left'}} onClick={()=>{handleDelete(cartItem)}} style={{backgroundColor:"red"}}>Remove From Cart</button>
         </div>
     )
 

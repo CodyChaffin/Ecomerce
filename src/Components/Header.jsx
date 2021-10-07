@@ -7,7 +7,7 @@ import { useState } from 'react'
 
 
 
-const Header = ({searchItems, setSearchItems, handleSubmit, setSortItems, setFilterCategory, cartItems}) => {
+const Header = ({searchItems, setSearchItems, handleSubmit, setSortItems, setFilterCategory, cartItems, setHideItems}) => {
     const [ cartOpen, setCartOpen ] = useState(false)
      
     function CartWindow(){
@@ -43,7 +43,8 @@ const Header = ({searchItems, setSearchItems, handleSubmit, setSortItems, setFil
             </div>
             <div className='main-top'></div>
             <Category setSortItems={setSortItems}
-                     setFilterCategory={setFilterCategory}/>
+                     setFilterCategory={setFilterCategory}
+                     setHideItems={setHideItems}/>
         </>
     )
 }

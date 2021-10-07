@@ -1,18 +1,18 @@
 import React from 'react'
 
-const CarouselCard = ({newItems}) => {
+const CarouselCard = ({topItems}) => {
 
   
 
     return (
         
             <div className='card-carousel'>
-                <img src={newItems.image} alt={newItems.name}/>
+                <img src={topItems.image} alt={topItems.name}/>
                 <span>
-                    <h4>${newItems.price}</h4>
-                    <p>{newItems.rating}</p>
+                    <h4>${topItems.price}</h4>
+                    <p>{topItems.rating}</p>
                 </span>  
-                <h3>{newItems.name}</h3>                
+                <h3>{topItems.name}</h3>                
             </div>
    
     )

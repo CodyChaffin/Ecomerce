@@ -10,6 +10,7 @@ function App() {
   const [sortItems, setSortItems] = useState('All')
   const [filterCategory, setFilterCategory] = useState('')
   const [hideItems, setHideItems] = useState(false) 
+  const [cartItems, setCartItems] = useState([])
  
 
 
@@ -19,6 +20,10 @@ function App() {
             .then(data=> setShowItems(data))
 },[])
 
+//adding items to the cart
+function itemAdded(newCartItem){
+  setCartItems((prevCart) => [...prevCart, newCartItem] )
+}
 //filter by search
   const searchedOutput = showItems.filter(item => item.name.toLowerCase().includes(searchItems.toLowerCase()))
 
@@ -36,12 +41,14 @@ function App() {
         setSortItems = {setSortItems}
         setFilterCategory={setFilterCategory}
         setHideItems={setHideItems}
+        cartItems={cartItems}
       /> 
       <MainContent 
         showItems={showItems}
         sortItems={sortItems}  
         selectedCategory={selectedCategory}
-        hideItems={hideItems}         
+        hideItems={hideItems} 
+        itemAdded={itemAdded}        
       />
     </div>
   );

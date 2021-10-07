@@ -1,7 +1,7 @@
 
 function CartCard({cartItem}){
     return(
-        <div style={{textAlign:'center', margin:'30px'}}
+        <div style={{textAlign:'center', margin:'30px', wordWrap:'break-word'}}
         className='cartCard'>
             <img style={{width : "200px"}}src={cartItem.image} alt={cartItem.name}/>
             <span>
@@ -9,7 +9,7 @@ function CartCard({cartItem}){
                 <p>{cartItem.rating}</p>
             </span>  
             <h3>{cartItem.name}</h3> 
-            <p style={{textAlign:'left'}}>{cartItem.description}</p> 
+            <p style={{textAlign:'center'}}>{cartItem.description}</p> 
             <button style={{alignContent:'left'}} onClick={()=>{console.log('gone')}} style={{backgroundColor:"red"}}>Remove From Cart</button>
         </div>
     )

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Header from './Components/Header';
 import MainContent from './Components/MainContent';
-
+import {Route} from 'react-router-dom'
 
 function App() {
 
@@ -43,6 +43,7 @@ function itemAdded(newCartItem){
         setHideItems={setHideItems}
         cartItems={cartItems}
       /> 
+      <Route>
       <MainContent 
         showItems={showItems}
         sortItems={sortItems}  
@@ -50,6 +51,8 @@ function itemAdded(newCartItem){
         hideItems={hideItems} 
         itemAdded={itemAdded}        
       />
+      </Route>
+      
     </div>
   );
 }

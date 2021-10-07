@@ -6,7 +6,7 @@ function Cart({cartOpen, setCartOpen, cartItems}) {
      
     return (
         
-        <Drawer anchor='right' open={cartOpen} style={{position:"fixed"}} >
+        <Drawer anchor='right' open={cartOpen} className="Drawer" style={{width:'25%'}} >
          <span onClick={()=>setCartOpen(!cartOpen)} className='cart'>
                 🛒 
          </span> 

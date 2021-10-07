@@ -6,6 +6,7 @@ import CarouselCard3 from './CarouselCard3';
 
 
 
+
 const MainContent = ({sortItems, selectedCategory, itemAdded, hideItems}) => {
 
     
@@ -48,8 +49,8 @@ const MainContent = ({sortItems, selectedCategory, itemAdded, hideItems}) => {
  
       
     const displayCarousel2 = randomArr.filter(deals => deals.price > 10 && deals.price <= 20)
-        .map(dealItem => <CarouselCard2 itemAdded={itemAdded} dealItem={dealItem} key={dealItem.id} itemAdded={itemAdded}/>)
-    const displayCarousel3 = randomArr.map(newItems => <CarouselCard3 itemAdded={itemAdded} newItems={newItems} key={newItems.id} itemAdded={itemAdded}/>)
+        .map(dealItem => <CarouselCard2 dealItem={dealItem} key={dealItem.id} itemAdded={itemAdded}/>)
+    const displayCarousel3 = randomArr.map(newItems => <CarouselCard3 newItems={newItems} key={newItems.id} itemAdded={itemAdded}/>)
 
 
 /////----------------------------------------------Carousel settings    
@@ -92,7 +93,7 @@ const MainContent = ({sortItems, selectedCategory, itemAdded, hideItems}) => {
       }
       
     return (
-
+            
         <> 
             <h3 className='centered'>Top Rated</h3>
             <Slider {...settings} className='carousel'>

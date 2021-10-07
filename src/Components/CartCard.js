@@ -8,7 +8,7 @@ function CartCard({cartItem}){
                 <p>{cartItem.rating}</p>
             </span>  
             <h3>{cartItem.name}</h3>  
-            {/* <button onClick={()=>{itemAdded(items)}}>Add TO Cart</button> */}
+            <button onClick={()=>{console.log('gone')}} style={{backgroundColor:"red"}}>Remove From Cart</button>
         </div>
     )
 

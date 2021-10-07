@@ -5,7 +5,8 @@ import CartCard from './CartCard'
 function Cart({cartOpen, setCartOpen, cartItems}) {
      
     return (
-        <Drawer anchor='right' open={cartOpen} >
+        
+        <Drawer anchor='right' open={cartOpen} style={{}} >
          <span onClick={()=>setCartOpen(!cartOpen)} className='cart'>
                 🛒 
          </span> 

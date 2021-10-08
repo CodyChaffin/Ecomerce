@@ -115,7 +115,7 @@ const MainContent = ({sortItems, selectedCategory, itemAdded, hideItems, showIte
             <ul className='cards'>
                 {hideItems ? displayProducts : null}
             </ul>
-           {itemCard ? <ItemDetails setItemCard={setItemCard} items={showItems} itemAdded={itemAdded}/>: null}
+           {itemCard ? <ItemDetails setItemCard={setItemCard} items={showItems} itemAdd={itemAdded}/>: null}
         </>
     )
 }

@@ -2,7 +2,7 @@ import { Drawer } from "@material-ui/core"
 import CartCard from './CartCard'
 
 
-function Cart({cartOpen, setCartOpen, cartItems, setCartItems, cartTotal, setCartTotal }) {
+function Cart({cartOpen, setCartOpen, cartItems, setCartItems, cartTotal}) {
    
     function handleDelete(item){
         const deleteItem = cartItems.filter(cart =>cart.id !== item.id)

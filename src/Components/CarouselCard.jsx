@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from 'react'
-import { Route } from 'react-router-dom'
+// import React, { useEffect, useState } from 'react'
+
 
 const CarouselCard = ({topItems, itemAdded}) => {
-    const [item, setItem] = useState(null)
-    const [isLoaded, setIsLoaded] = useState(false)
+    // const [item, setItem] = useState(null)
+    // const [isLoaded, setIsLoaded] = useState(false)
 
-    useEffect(()=>{
-        fetch(`http://localhost:8000/products/${topItems.id}`)
-        .then(resp =>resp.json())
-        .then(item => {
-            setItem(item)
-            setIsLoaded(true);
-        });
-    },[]);
+    // useEffect(()=>{
+    //     fetch(`http://localhost:8000/products/${topItems.id}`)
+    //     .then(resp =>resp.json())
+    //     .then(item => {
+    //         setItem(item)
+    //         setIsLoaded(true);
+    //     });
+    // },[]);
 
-    if (!isLoaded) return <h2>Loading, Please Wait...</h2>
+    // if (!isLoaded) return <h2>Loading, Please Wait...</h2>
   
 
     return (
-        <Route>
+     
             <div className='card-carousel'>
                 <img src={topItems.image} alt={topItems.name}/>
                 <span>
@@ -28,7 +28,7 @@ const CarouselCard = ({topItems, itemAdded}) => {
                 <h3>{topItems.name}</h3> 
                 <button className='addBtn' onClick={()=>{itemAdded(topItems)}}>Add TO Cart</button>               
             </div>
-        </Route>
+        
     )
 }
 export default CarouselCard

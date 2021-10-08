@@ -3,12 +3,19 @@ import Filter from './Filter'
 import Category from './Category'
 import Cart from './Cart'
 import { useState } from 'react'
+import { useHistory} from 'react-router-dom'
 
 
 
 
 const Header = ({searchItems, setSearchItems, handleSubmit, setSortItems, setFilterCategory, cartItems, setHideItems, setCartItems}) => {
     const [ cartOpen, setCartOpen ] = useState(false)
+
+    const history = useHistory()
+
+    function handlePageRoute(){
+        history.push('./')
+    }
      
     function CartWindow(){
         
@@ -23,13 +30,16 @@ const Header = ({searchItems, setSearchItems, handleSubmit, setSortItems, setFil
     return (
         <>
             <div className='header'>
+                <div onClick={handlePageRoute}>
+
                 <span className='logo-box'>
                     <img className='logo' 
                         src='https://api.freelogodesign.org/files/a9937c4a4c67418ea7258124da536628/thumb/logo_200x200.png?v=637689639850000000' 
                         alt='logo'
                     />
-                    StoreName
+                    <h1>BarGain</h1>
                 </span>
+                </div>
             
                 <Filter 
                     searchItems={searchItems} 

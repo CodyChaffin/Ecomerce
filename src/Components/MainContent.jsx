@@ -3,7 +3,7 @@ import CarouselCard from './CarouselCard'
 import Slider from "react-slick";
 import CarouselCard2 from './CarouselCard2';
 import CarouselCard3 from './CarouselCard3';
-import ItemDetails from './ItemDetails';
+
 
 
 
@@ -96,6 +96,7 @@ const MainContent = ({sortItems, selectedCategory, itemAdded, hideItems}) => {
     return (
             
         <> 
+
             <h3 className='centered'>Top Rated</h3>
             <Slider {...settings} className='carousel'>
                 {displayCarousel1}
@@ -107,7 +108,7 @@ const MainContent = ({sortItems, selectedCategory, itemAdded, hideItems}) => {
             </Slider>
             {displayCarousel3.length > 20 ? <h3 className='centered'>New Arrivals</h3> : null}
             <Slider {...settings} className='carousel'>
-                {displayCarousel3.slice(90)}
+                {displayCarousel3.slice(94)}
             </Slider>
             <ul className='cards'>
                 {hideItems ? displayProducts : null}

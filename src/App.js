@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import Header from './Components/Header';
 import MainContent from './Components/MainContent';
-import {Route} from 'react-router-dom'
+import ItemDetails from './Components/ItemDetails'
+import { Route, Switch } from 'react-router-dom'
+
 
 function App() {
 
@@ -11,6 +13,7 @@ function App() {
   const [filterCategory, setFilterCategory] = useState('')
   const [hideItems, setHideItems] = useState(false) 
   const [cartItems, setCartItems] = useState([])
+  
  
 
 
@@ -31,7 +34,9 @@ function itemAdded(newCartItem){
 // //filter by category
   const selectedCategory = filterCategory ? searchedOutput.filter(itemCategory => itemCategory.category === filterCategory) : [...searchedOutput]
     
-  
+  function handleClick(id){
+      return( <ItemDetails />)
+  }
 
   return (
     <div className='app'>
@@ -44,15 +49,21 @@ function itemAdded(newCartItem){
         cartItems={cartItems}
         setCartItems={setCartItems}
       /> 
-      
-      <MainContent 
-        showItems={showItems}
-        sortItems={sortItems}  
-        selectedCategory={selectedCategory}
-        hideItems={hideItems} 
-        itemAdded={itemAdded}        
-      />
-      
+      <Switch>     
+          <Route path='/:id'>
+            <ItemDetails/>
+          </Route>
+        <Route path='/'>
+          <MainContent 
+            showItems={showItems}
+            sortItems={sortItems}  
+            selectedCategory={selectedCategory}
+            hideItems={hideItems} 
+            itemAdded={itemAdded}    
+          
+          />    
+        </Route>
+      </Switch>
     </div>
   );
 }

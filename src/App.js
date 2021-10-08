@@ -65,7 +65,7 @@ function App() {
       /> 
       <Switch>     
           <Route path='/:id'>
-            <ItemDetails/>
+            <ItemDetails itemAdded={itemAdded} />
           </Route>
         <Route path='/'>
           <MainContent 

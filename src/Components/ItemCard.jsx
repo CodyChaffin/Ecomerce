@@ -12,7 +12,7 @@ const ItemCard = ({items, itemAdded}) => {
    
     return (
         
-                <Link to={`/${items.id}`} className='card'>
+                <Link to={`/${items.id}`} className='card link-class'>
                     <img src={items.image} alt={items.name}/>
                     <span>
                         <h4>${items.price}</h4>

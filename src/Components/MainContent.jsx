@@ -108,7 +108,7 @@ const MainContent = ({sortItems, selectedCategory, itemAdded, hideItems, showIte
                 {displayCarousel2}  
                
             </Slider>
-            {displayCarousel3.length > 20 ? <h3 className='centered'>New Arrivals</h3> : null}
+            {displayCarousel3.length > 25 ? <h3 className='centered'>New Arrivals</h3> : null}
             <Slider {...settings} className='carousel'>
                 {displayCarousel3.slice(94)}
             </Slider>

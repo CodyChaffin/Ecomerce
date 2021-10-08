@@ -1,11 +1,11 @@
-// import React, { useEffect, useState } from 'react'
+import {Link} from 'react-router-dom'
 
 
 const CarouselCard = ({topItems, itemAdded}) => {
     
     return (
      
-            <div className='card-carousel'>
+            <Link to={`/${topItems.id}`} className='card-carousel link-class'>
                 <img src={topItems.image} alt={topItems.name}/>
                 <span>
                     <h4>${topItems.price}</h4>
@@ -13,7 +13,7 @@ const CarouselCard = ({topItems, itemAdded}) => {
                 </span>  
                 <h3>{topItems.name}</h3> 
                 <button className='addBtn' onClick={()=>{itemAdded(topItems)}}>Add TO Cart</button>               
-            </div>
+            </Link>
         
     )
 }

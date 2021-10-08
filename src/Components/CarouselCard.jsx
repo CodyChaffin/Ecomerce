@@ -2,21 +2,7 @@
 
 
 const CarouselCard = ({topItems, itemAdded}) => {
-    // const [item, setItem] = useState(null)
-    // const [isLoaded, setIsLoaded] = useState(false)
-
-    // useEffect(()=>{
-    //     fetch(`http://localhost:8000/products/${topItems.id}`)
-    //     .then(resp =>resp.json())
-    //     .then(item => {
-    //         setItem(item)
-    //         setIsLoaded(true);
-    //     });
-    // },[]);
-
-    // if (!isLoaded) return <h2>Loading, Please Wait...</h2>
-  
-
+    
     return (
      
             <div className='card-carousel'>

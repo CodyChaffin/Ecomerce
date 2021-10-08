@@ -4,12 +4,14 @@ import Slider from "react-slick";
 import CarouselCard2 from './CarouselCard2';
 import CarouselCard3 from './CarouselCard3';
 
+import ItemDetails from './ItemDetails';
+import { useState } from 'react';
 
 
 
 
-const MainContent = ({sortItems, selectedCategory, itemAdded, hideItems}) => {
-
+const MainContent = ({sortItems, selectedCategory, itemAdded, hideItems, showItems}) => {
+    const [itemCard,setItemCard] = useState(false)
     
 
 
@@ -113,7 +115,7 @@ const MainContent = ({sortItems, selectedCategory, itemAdded, hideItems}) => {
             <ul className='cards'>
                 {hideItems ? displayProducts : null}
             </ul>
-            {/* <ItemDetails items={selectedCategory}/> */}
+           {itemCard ? <ItemDetails setItemCard={setItemCard} items={showItems} itemAdded={itemAdded}/>: null}
         </>
     )
 }

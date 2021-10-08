@@ -13,9 +13,7 @@ function App() {
   const [filterCategory, setFilterCategory] = useState('')
   const [hideItems, setHideItems] = useState(false) 
   const [cartItems, setCartItems] = useState([])
-  
- 
-
+  const[cartTotal, setCartTotal]= useState([]) 
 
   useEffect(()=> {
     fetch('http://localhost:8000/products')
@@ -23,19 +21,33 @@ function App() {
             .then(data=> setShowItems(data))
 },[])
 
-//adding items to the cart
-function itemAdded(newCartItem){
-  setCartItems((prevCart) => [...prevCart, newCartItem] )
-}
-//filter by search
+  //adding items to the cart
+  function itemAdded(newCartItem){
+    setCartItems((prevCart) => [...prevCart, newCartItem] )
+  
+  }
+  //filter by search
   const searchedOutput = showItems.filter(item => item.name.toLowerCase().includes(searchItems.toLowerCase()))
 
 
-// //filter by category
+  // //filter by category
   const selectedCategory = filterCategory ? searchedOutput.filter(itemCategory => itemCategory.category === filterCategory) : [...searchedOutput]
     
   function handleClick(id){
       return( <ItemDetails />)
+  }    
+  
+  //cart total price
+  useEffect(()=>{
+    total();
+  }, [cartItems]);
+
+  const total = () => {
+    let totalValue = 0;
+    for (let i = 0; i <cartItems.length; i++) {
+      totalValue += cartItems[i].price
+    }
+    setCartTotal(totalValue)
   }
 
   return (
@@ -48,6 +60,8 @@ function itemAdded(newCartItem){
         setHideItems={setHideItems}
         cartItems={cartItems}
         setCartItems={setCartItems}
+        cartTotal={cartTotal}
+        setCartTotal={setCartTotal}
       /> 
       <Switch>     
           <Route path='/:id'>

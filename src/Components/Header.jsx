@@ -6,9 +6,7 @@ import { useState } from 'react'
 import { useHistory} from 'react-router-dom'
 
 
-
-
-const Header = ({searchItems, setSearchItems, handleSubmit, setSortItems, setFilterCategory, cartItems, setHideItems, setCartItems}) => {
+const Header = ({ cartTotal, searchItems, setSearchItems, handleSubmit, setSortItems, setFilterCategory, cartItems, setHideItems, setCartItems, setCartTotal}) => {
     const [ cartOpen, setCartOpen ] = useState(false)
 
     const history = useHistory()
@@ -47,7 +45,7 @@ const Header = ({searchItems, setSearchItems, handleSubmit, setSortItems, setFil
                     handleSubmit={handleSubmit}
                     setSortItems={setSortItems}
                 />  
-                {cartOpen ? <Cart cartItems={cartItems}setCartOpen={setCartOpen} cartOpen={cartOpen} setCartItems={setCartItems}/> : CartWindow() }  
+                {cartOpen ? <Cart cartTotal={cartTotal} setCartTotal={setCartTotal} cartItems={cartItems} setCartOpen={setCartOpen} cartOpen={cartOpen} setCartItems={setCartItems}/> : CartWindow() }  
                  
                 
             </div>

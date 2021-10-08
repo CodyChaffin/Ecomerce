@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 
 
-function ItemDetails(){
+function ItemDetails({items, itemAdded}){
     
     const [item, setItem] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false)
@@ -30,7 +30,7 @@ function ItemDetails(){
             </span>  
             <h3>{item.name}</h3> 
             <p>{item.description}</p> 
-            {/* <button className='addbtn' onClick={()=>{itemAdded(items)}}>Add TO Cart</button> */}
+            <button className='addbtn' onClick={()=>{itemAdded(items)}}>Add TO Cart</button>
         </div>
      )
 }

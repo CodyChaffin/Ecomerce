@@ -32,7 +32,7 @@ const Header = ({ cartTotal, searchItems, setSearchItems, handleSubmit, setSortI
 
                 <span className='logo-box'>
                     <img className='logo' 
-                        src='https://api.freelogodesign.org/files/a9937c4a4c67418ea7258124da536628/thumb/logo_200x200.png?v=637689639850000000' 
+                        src='https://w7.pngwing.com/pngs/793/740/png-transparent-ubuntu-computer-icons-long-term-support-canonical-gifts-panels-shading-background-miscellaneous-orange-logo.png' 
                         alt='logo'
                     />
                     <h1>BarGain</h1>

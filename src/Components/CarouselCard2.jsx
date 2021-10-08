@@ -3,6 +3,9 @@ import { Link } from "react-router-dom"
 const CarouselCard2 = ({dealItem, itemAdded}) => {
     return (
         <Link to={`/${dealItem.id}`} className='card-carousel link-class'>
+            <p className='wrap2'>
+                    DEALS 
+            </p>
             <img src={dealItem.image} alt={dealItem.name}/>
             <span>
                 <h4>${dealItem.price}</h4>

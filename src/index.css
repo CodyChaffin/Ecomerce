@@ -23,9 +23,10 @@
 }
 
 .logo{
-  width: 61px;
-  height: 56px;
-  justify-content: flex-start;
+  border-radius: 25px;
+  width: 58px;
+  margin-left: 10px;
+  margin-right: 12px;
   
 }
 
@@ -223,7 +224,7 @@
   margin-top: 50px;
   text-align: center;
   font-size: 2em;
-  margin-bottom: 20px;
+  margin-bottom: 38px;
 }
 
 /* .Drawer{
@@ -278,17 +279,43 @@
   padding: 6px;
 }
 
-/* <div className='select-content'>
-<span className='price'>
-    <h4>${item.price}</h4>
-</span>
-<div>
-    <p>{item.rating}</p>
-</div>  
-<div>
-    <h3>{item.name}</h3> 
-    <p>{item.description}</p> 
-</div> 
-<button className='addbtn' onClick={()=>{itemAdded(item)}}>Add TO Cart</button>
+.wrap{
+  margin-bottom: -55px;
+  background-color: #d1ace0;
+  transform: skew( 
+0deg, 
+334deg);
+  width: 187px;
+  display: flex;
+  justify-content: space-around;
+}
 
-</div>   */
+.wrap2{
+  margin-bottom: -55px;
+  background-color: #ff3029;
+  transform: skew( 
+0deg, 
+334deg);
+  width: 187px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.cartCard{
+  background-color: #ffd4d2;
+  text-align: center;
+  margin: 30px;
+  max-width: 300px;
+  padding: 20px;
+}
+
+.cartButton{
+  align-content: left;
+  margin-top: 0.5rem;
+  background-color: #33302e;
+  border: 2px;
+  border-radius: 10px;
+  padding: 6px;
+  color: white;
+  cursor: pointer;
+}

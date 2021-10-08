@@ -54,32 +54,7 @@ const MainContent = ({sortItems, selectedCategory, itemAdded, hideItems, showIte
     const displayCarousel2 = randomArr.filter(deals => deals.price > 10 && deals.price <= 20)
         .map(dealItem => <CarouselCard2 dealItem={dealItem} key={dealItem.id} itemAdded={itemAdded}/>)
     const displayCarousel3 = randomArr.map(newItems => <CarouselCard3 newItems={newItems} key={newItems.id} itemAdded={itemAdded}/>)
-
-
-/////----------------------------------------------Carousel settings    
-
-    // function SampleNextArrow(props) {
-    //     const { className, style, onClick } = props;
-    //     return (
-    //       <div
-    //         className={className}
-    //         style={{ ...style, display: "block", background: "red" }}
-    //         onClick={onClick}
-    //       />
-    //     );
-    //   }
-      
-    //   function SamplePrevArrow(props) {
-    //     const { className, style, onClick } = props;
-    //     return (
-    //       <div
-    //         className={className}
-    //         style={{ ...style, display: "block", background: "green" }}
-    //         onClick={onClick}
-    //       />
-    //     );
-    //   }
-      
+     
     const settings = {
         focusOnSelect: true,
         dots: true,
@@ -87,17 +62,18 @@ const MainContent = ({sortItems, selectedCategory, itemAdded, hideItems, showIte
         slidesToShow: 5,
         slidesToScroll: 3,
         autoplay: true,
-        speed: 3000,
+        speed: 4000,
         autoplaySpeed: 3000,
         pauseOnHover: true,
         cssEase: "linear",
-        // nextArrow: <SampleNextArrow />,
-        // prevArrow: <SamplePrevArrow />
       }
       
     return (
             
         <> 
+            <ul className='cards'>
+                {hideItems ? displayProducts : null}
+            </ul>
 
             <h3 className='centered'>Top Rated</h3>
             <Slider {...settings} className='carousel'>
@@ -112,9 +88,7 @@ const MainContent = ({sortItems, selectedCategory, itemAdded, hideItems, showIte
             <Slider {...settings} className='carousel'>
                 {displayCarousel3.slice(94)}
             </Slider>
-            <ul className='cards'>
-                {hideItems ? displayProducts : null}
-            </ul>
+            
            {itemCard ? <ItemDetails setItemCard={setItemCard} items={showItems} itemAdd={itemAdded}/>: null}
         </>
     )
